@@ -8,15 +8,22 @@ public class MyCLI implements CLIUI{
     public MyCLI(Scanner scanner) {
         this.scanner = scanner;
     }
-    @Override
-    public AccountType requestAccountType() {
-        AccountType accountType = new AccountType(scanner.nextLine());
-        AccountBasicCLI accountBasicCLI = new AccountBasicCLI()
-        return null;
-    }
+
 
     @Override
-    public double requestClientAmount() {
+    public AccountType requestAccountType() {
+        System.out.println("Please enter your account type");
+        AccountType at = new AccountType(this.scanner.nextLine());
+        return at;
+    }
+    public void createAccountRequest() {
+        //AccountBasicCLI abc = new AccountBasicCLI(this,)
+    }
+
+
+
+    @Override
+    public double requestClientAmount()  {
         return 0;
     }
 

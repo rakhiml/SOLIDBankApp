@@ -11,7 +11,8 @@ public class Account {
         return this.balance;
     }
     public String toString() {
-        return "String of Account class";
+
+        return "id=" + this.id + ", clientID=" + this.clientID + ", balance=" + this.balance;
     }
 
     public String getClientID(){

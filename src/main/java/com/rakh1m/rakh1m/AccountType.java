@@ -6,7 +6,7 @@ public class AccountType {
         this.accountType = accountType;
     }
 
-    public boolean getAccountType() {
-        return true;
+    public String getAccountType() {
+        return this.accountType;
     }
 }
