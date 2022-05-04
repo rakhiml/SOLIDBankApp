@@ -10,9 +10,16 @@ public class Account {
     public double getBalance() {
         return this.balance;
     }
-    public String toString() {
 
-        return "id=" + this.id + ", clientID=" + this.clientID + ", balance=" + this.balance;
+    @Override
+    public String toString() {
+        return "Account{" +
+
+                ", id='" + id + '\'' +
+                ", clientID='" + clientID + '\'' +
+                ", balance=" + balance +
+
+                '}';
     }
 
     public String getClientID(){

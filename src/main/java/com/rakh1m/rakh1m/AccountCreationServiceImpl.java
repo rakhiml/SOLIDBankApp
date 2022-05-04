@@ -1,7 +1,7 @@
 package com.rakh1m.rakh1m;
 
 public class AccountCreationServiceImpl implements AccountCreationService {
-    AccountDAO accountDAO;
+    private AccountDAO accountDAO;
     public AccountCreationServiceImpl(AccountDAO accountDAO){
         this.accountDAO = accountDAO;
     }

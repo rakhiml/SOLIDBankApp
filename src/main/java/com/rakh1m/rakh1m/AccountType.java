@@ -9,4 +9,11 @@ public class AccountType {
     public String getAccountType() {
         return this.accountType;
     }
+
+    @Override
+    public String toString() {
+        return "AccountType{" +
+                "accountType='" + accountType + '\'' +
+                '}';
+    }
 }
