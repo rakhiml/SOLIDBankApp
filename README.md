@@ -1,6 +1,5 @@
 # SOLID Bank App
-## Spring Core
-
+### Spring core
 
 
 ## Installation
