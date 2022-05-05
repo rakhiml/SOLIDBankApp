@@ -17,9 +17,9 @@ public class MemoryAccountDao implements AccountDAO{
 
     @Override
     public void createNewAccount(Account account) {
-        if (account == null) {
-            System.out.println("Error creating account");
-        }
+//        if (account == null) {
+//            System.out.println("Error creating account");
+//        }
         accountList.add(account);
         System.out.println("Account has been sucessfuly created");
     }

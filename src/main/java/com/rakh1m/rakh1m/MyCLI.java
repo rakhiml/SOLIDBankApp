@@ -3,21 +3,21 @@ package com.rakh1m.rakh1m;
 import java.util.Scanner;
 
 public class MyCLI implements CLIUI{
-    //Scanner scanner;
-    private String str;
-//    public MyCLI(Scanner scanner) {
-//        this.str = scanner;
-//    }
+    private Scanner scanner;
 
 
-    public void setStr(String str) {
-        this.str = str;
+    public MyCLI(Scanner scanner) {
+        this.scanner = scanner;
     }
+
+
+
 
     @Override
     public AccountType requestAccountType() {
         //System.out.println("Please enter your account type");
-        AccountType at = new AccountType(this.str);
+        AccountType at = new AccountType(this.scanner.nextLine());
+
         return at;
     }
 

@@ -1,6 +1,7 @@
 package com.rakh1m.rakh1m;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Scanner;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 public class Rakh1mApplication  {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("props.xml");
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
 		String help = "Wellcome to CLI banking service" +
 				"Please enter operation number:" +
@@ -37,8 +38,7 @@ public class Rakh1mApplication  {
 			}
 			if(cmd.equals("2")) {
 				System.out.println("Please enter account type");
-				mycli.setStr(scn.nextLine());
-				mycli.requestAccountType();
+				//mycli.requestAccountType();
 				abc.createAccountRequest("1");
 			}
 

@@ -10,10 +10,10 @@ public class AccountType {
         return this.accountType;
     }
 
-    @Override
-    public String toString() {
-        return "AccountType{" +
-                "accountType='" + accountType + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "AccountType{" +
+//                "accountType='" + accountType + '\'' +
+//                '}';
+//    }
 }
