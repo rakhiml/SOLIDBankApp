@@ -27,19 +27,23 @@ public class Rakh1mApplication  {
 		MyCLI mycli = context.getBean(MyCLI.class);
 		AccountBasicCLI abc = context.getBean(AccountBasicCLI.class);
 		while (true) {
+
 			String cmd = scn.nextLine();
 
 			if (cmd.equals("7")){
 				System.exit(0);
 
 			}
-			if (cmd.equals("1")) {
+			else if (cmd.equals("1")) {
 				abc.getAccounts("1");
 			}
-			if(cmd.equals("2")) {
-				System.out.println("Please enter account type");
+			else if(cmd.equals("2")) {
+				System.out.print("Please enter account type");
 				//mycli.requestAccountType();
 				abc.createAccountRequest("1");
+			}
+			else {
+				System.out.println("Command not found!");
 			}
 
 		}

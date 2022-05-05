@@ -14,10 +14,12 @@ public class AppConfig {
     public MemoryAccountDao memoryAccountDao() {
         return new MemoryAccountDao();
     }
+
     @Bean
     public AccountDAO accountDAO() {
         return new MemoryAccountDao();
     }
+
     @Bean
     public AccountListingService accountListingService(MemoryAccountDao memoryAccountDao) {
         return new AccountListingServiceImpl(memoryAccountDao);
@@ -27,24 +29,26 @@ public class AppConfig {
     public AccountCreationService accountCreationService(MemoryAccountDao memoryAccountDao) {
         return new AccountCreationServiceImpl(memoryAccountDao);
     }
+
     @Bean
     public BankCore bankCore(AccountCreationService accountCreationService) {
         return new BankCore(accountCreationService);
     }
+
     @Bean
     public Scanner scanner() {
         return new Scanner(System.in);
     }
+
     @Bean
     public CreateAccountOperationUI createAccountOperationUI(Scanner scanner) {
         return new MyCLI(scanner);
     }
+
     @Bean
     public AccountBasicCLI accountBasicCLI(CreateAccountOperationUI createAccountOperationUI, BankCore bankCore, AccountListingService accountListingService) {
         return new AccountBasicCLI(createAccountOperationUI, bankCore, accountListingService);
     }
-
-
 
 
 }

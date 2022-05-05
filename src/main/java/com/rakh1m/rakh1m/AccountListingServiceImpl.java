@@ -2,12 +2,13 @@ package com.rakh1m.rakh1m;
 
 import java.util.List;
 
-public class AccountListingServiceImpl implements AccountListingService{
+public class AccountListingServiceImpl implements AccountListingService {
     private AccountDAO accountDAO;
 
     public AccountListingServiceImpl(AccountDAO accountDAO) {
         this.accountDAO = accountDAO;
     }
+
     @Override
     public Account getClientAccounts(String clientID, String accountID) {
         accountDAO.getClientAccounts(clientID);
@@ -21,7 +22,7 @@ public class AccountListingServiceImpl implements AccountListingService{
 
     @Override
     public List<Account> getClientAccounts(String clientID) {
-            return accountDAO.getClientAccounts(clientID);
+        return accountDAO.getClientAccounts(clientID);
     }
 
     @Override

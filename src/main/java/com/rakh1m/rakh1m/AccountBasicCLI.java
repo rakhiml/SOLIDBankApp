@@ -2,7 +2,7 @@ package com.rakh1m.rakh1m;
 
 import java.util.List;
 
-public class AccountBasicCLI{
+public class AccountBasicCLI {
 
     CreateAccountOperationUI createAccountOperationUI;
     BankCore bankCore;
@@ -15,17 +15,15 @@ public class AccountBasicCLI{
     }
 
     void createAccountRequest(String clientID) {
-            bankCore.createNewAccount(createAccountOperationUI.requestAccountType(),clientID);
+        bankCore.createNewAccount(createAccountOperationUI.requestAccountType(), clientID);
 
 
     }
 
-    void getAccounts(String clientID){
-            List<Account> clientAccounts =  accountListing.getClientAccounts(clientID);
-             System.out.println(clientAccounts);
-      //  AccountListingServiceImpl
+    void getAccounts(String clientID) {
+        List<Account> clientAccounts = accountListing.getClientAccounts(clientID);
+        System.out.println(clientAccounts);
     }
-
 
 
 }

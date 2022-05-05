@@ -22,12 +22,14 @@ public class Account {
                 '}';
     }
 
-    public String getClientID(){
+    public String getClientID() {
         return clientID;
     }
+
     public void setClientID(String clientID) {
         this.clientID = clientID;
     }
+
     public Account(AccountType accountType, String id, String clientID, double balance, boolean withDrawAllowed) {
         this.accountType = accountType;
         this.id = id;
@@ -36,26 +38,29 @@ public class Account {
         this.withDrawAllowed = withDrawAllowed;
     }
 
-    public void setWithDrawAllowed(boolean withDrawAllowed){
+    public void setWithDrawAllowed(boolean withDrawAllowed) {
         this.withDrawAllowed = withDrawAllowed;
     }
 
     public AccountType getAccountType() {
         return this.accountType;
     }
+
     public void setAccountType(AccountType accountType) {
         this.accountType = accountType;
     }
-    public String getId(){
+
+    public String getId() {
         return this.id;
     }
+
     public void setId(String id) {
         this.id = id;
     }
+
     public void setBalance(double balance) {
         this.balance = balance;
     }
-
 
 
 }
