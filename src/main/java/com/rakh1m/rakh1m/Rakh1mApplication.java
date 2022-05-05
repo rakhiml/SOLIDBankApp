@@ -13,14 +13,14 @@ public class Rakh1mApplication  {
 	public static void main(String[] args) {
 		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-		String help = "Wellcome to CLI banking service" +
-				"Please enter operation number:" +
-				"1 - show accounts;" +
-				"2 - create account;" +
-				"3 - deposit;" +
-				"4 - withdraw;" +
-				"5 - transfer;" +
-				"6 - this message;" +
+		String help = "Wellcome to CLI banking service \n" +
+				"Please enter operation number:\n" +
+				"1 - show accounts;\n" +
+				"2 - create account;\n" +
+				"3 - deposit;\n" +
+				"4 - withdraw;\n" +
+				"5 - transfer;\n" +
+				"6 - this message;\n" +
 				"7 - exit";
 		System.out.println(help);
 		Scanner scn = new Scanner(System.in);
@@ -31,6 +31,7 @@ public class Rakh1mApplication  {
 			String cmd = scn.nextLine();
 
 			if (cmd.equals("7")){
+				System.out.println("Application closed.");
 				System.exit(0);
 
 			}
@@ -38,9 +39,13 @@ public class Rakh1mApplication  {
 				abc.getAccounts("1");
 			}
 			else if(cmd.equals("2")) {
-				System.out.print("Please enter account type");
+				System.out.print("Please enter account type \n" +
+						"[CHECKING, SAVING, FIXED]");
 				//mycli.requestAccountType();
 				abc.createAccountRequest("1");
+			}
+			else if (cmd.equals("6")) {
+				System.out.println(help);
 			}
 			else {
 				System.out.println("Command not found!");
