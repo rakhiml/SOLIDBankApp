@@ -27,5 +27,5 @@ Run the project from main located in Rakh1mApplication.class
 
 6 - this message;
 
-7 - exit
+7 - exit;
 
