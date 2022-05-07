@@ -16,10 +16,11 @@ public class MyCLI implements CLIUI {
 
     @Override
     public AccountType requestAccountType() {
-        System.out.println();
-        AccountType at = new AccountType(this.scanner.nextLine());
+        try {return Enum.valueOf(AccountType.class, scanner.nextLine());}
+        catch (IllegalArgumentException e) {
+            return null;
+        }
 
-        return at;
     }
 
     @Override

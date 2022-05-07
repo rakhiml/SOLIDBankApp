@@ -17,7 +17,6 @@ public class AccountBasicCLI {
     void createAccountRequest(String clientID) {
         bankCore.createNewAccount(createAccountOperationUI.requestAccountType(), clientID);
 
-
     }
 
     void getAccounts(String clientID) {

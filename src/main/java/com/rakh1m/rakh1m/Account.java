@@ -1,6 +1,6 @@
 package com.rakh1m.rakh1m;
 
-public class Account {
+public abstract class Account {
     private AccountType accountType;
     private String id;
     private String clientID;
@@ -14,7 +14,7 @@ public class Account {
     @Override
     public String toString() {
         return "Account{" +
-
+//                accountType +
                 ", id='" + id + '\'' +
                 ", clientID='" + clientID + '\'' +
                 ", balance=" + balance +
