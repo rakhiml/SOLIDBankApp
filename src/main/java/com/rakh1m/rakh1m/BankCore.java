@@ -10,12 +10,9 @@ public class BankCore {
     }
 
     public void createNewAccount(AccountType accountType, String clientID) {
-        try {
-            accountCreation.create(accountType, this.id, clientID, this.lastAccountNumber);
-            incrementLastAccountNumber();
-        } catch (WrongAccountType e) {
-            System.out.println(e.getMessage());
-        }
+
+        accountCreation.create(accountType, id, clientID, this.lastAccountNumber);
+        incrementLastAccountNumber();
 
     }
 

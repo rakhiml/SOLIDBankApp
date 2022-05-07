@@ -9,17 +9,9 @@ public class AccountCreationServiceImpl implements AccountCreationService {
 
     @Override
     public void create(AccountType accountType, long bankID, String clientID, long accountID) {
-//        if (accountType == null) {
-//            System.out.println("Account has NOT been created.");
-//
-//        }
-        try {
-            accountType.toString();
-        } catch (NullPointerException e) {
-            throw new WrongAccountType();
-        }
+        String accType = accountType == null ? "" : accountType.toString();
         Account acc;
-        switch (accountType.toString()) {
+        switch (accType) {
             case "FIXED":
                 acc = new FixedAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, false);
                 break;
