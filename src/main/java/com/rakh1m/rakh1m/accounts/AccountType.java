@@ -1,4 +1,4 @@
-package com.rakh1m.rakh1m;
+package com.rakh1m.rakh1m.accounts;
 
 import java.util.Arrays;
 

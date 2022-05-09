@@ -1,5 +1,8 @@
 package com.rakh1m.rakh1m;
 
+import com.rakh1m.rakh1m.accounts.AccountType;
+import com.rakh1m.rakh1m.appUI.CLIUI;
+
 import java.util.Scanner;
 
 public class MyCLI implements CLIUI {
@@ -16,8 +19,9 @@ public class MyCLI implements CLIUI {
 
     @Override
     public AccountType requestAccountType() {
-        try {return Enum.valueOf(AccountType.class, scanner.nextLine());}
-        catch (IllegalArgumentException e) {
+        try {
+            return Enum.valueOf(AccountType.class, scanner.nextLine());
+        } catch (IllegalArgumentException e) {
             return null;
         }
 

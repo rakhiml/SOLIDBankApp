@@ -1,4 +1,4 @@
-package com.rakh1m.rakh1m;
+package com.rakh1m.rakh1m.accounts;
 
 public class AccountDeposit extends Account {
 

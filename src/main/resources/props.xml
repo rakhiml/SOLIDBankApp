@@ -3,25 +3,25 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="memoryAccountDAO" class="com.rakh1m.rakh1m.MemoryAccountDao">
+    <bean id="memoryAccountDAO" class="com.rakh1m.rakh1m.dao.MemoryAccountDao">
     </bean>
-    <bean id="accountDAO" class="com.rakh1m.rakh1m.AccountDAO" abstract="true">
+    <bean id="accountDAO" class="com.rakh1m.rakh1m.dao.AccountDAO" abstract="true">
     </bean>
-    <bean id="accountListingService" class="com.rakh1m.rakh1m.AccountListingService" abstract="true">
+    <bean id="accountListingService" class="com.rakh1m.rakh1m.accountServices.AccountListingService" abstract="true">
     </bean>
-    <bean id="accountListingServiceImpl" class="com.rakh1m.rakh1m.AccountListingServiceImpl">
+    <bean id="accountListingServiceImpl" class="com.rakh1m.rakh1m.accountServicesImpl.AccountListingServiceImpl">
         <constructor-arg ref="memoryAccountDAO"/>
     </bean>
-    <bean id="accountCreationService" class="com.rakh1m.rakh1m.AccountCreationService" abstract="true">
+    <bean id="accountCreationService" class="com.rakh1m.rakh1m.accountServices.AccountCreationService" abstract="true">
     </bean>
-    <bean id="accountCreationServiceImpl" class="com.rakh1m.rakh1m.AccountCreationServiceImpl">
+    <bean id="accountCreationServiceImpl" class="com.rakh1m.rakh1m.accountServicesImpl.AccountCreationServiceImpl">
         <constructor-arg ref="memoryAccountDAO"/>
     </bean>
     <bean id="bankCore" class="com.rakh1m.rakh1m.BankCore">
         <constructor-arg ref="accountCreationServiceImpl"/>
     </bean>
-    <bean id="createAccountOperationUI" class="com.rakh1m.rakh1m.CreateAccountOperationUI" abstract="true"/>
-    <bean id="cLIUI" class="com.rakh1m.rakh1m.CLIUI" abstract="true"/>
+    <bean id="createAccountOperationUI" class="com.rakh1m.rakh1m.appUI.CreateAccountOperationUI" abstract="true"/>
+    <bean id="cLIUI" class="com.rakh1m.rakh1m.appUI.CLIUI" abstract="true"/>
     <bean id="myCLI" class="com.rakh1m.rakh1m.MyCLI" lazy-init="true">
         
     </bean>

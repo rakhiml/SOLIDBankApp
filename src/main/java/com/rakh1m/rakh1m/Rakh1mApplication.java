@@ -27,7 +27,6 @@ public class Rakh1mApplication {
         //MyCLI mycli = context.getBean(MyCLI.class);
         AccountBasicCLI abc = context.getBean(AccountBasicCLI.class);
         while (true) {
-
             String cmd = scn.nextLine();
             switch (cmd) {
                 case "7" -> {
@@ -44,11 +43,6 @@ public class Rakh1mApplication {
                 case "6" -> System.out.println(help);
                 default -> System.out.println("Command not found!");
             }
-
-
         }
-
-
     }
-
 }

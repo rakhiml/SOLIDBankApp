@@ -1,4 +1,6 @@
-package com.rakh1m.rakh1m;
+package com.rakh1m.rakh1m.accountServices;
+
+import com.rakh1m.rakh1m.accounts.AccountType;
 
 public interface AccountCreationService {
 
