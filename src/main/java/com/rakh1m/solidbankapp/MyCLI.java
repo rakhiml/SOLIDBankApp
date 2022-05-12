@@ -2,19 +2,18 @@ package com.rakh1m.solidbankapp;
 
 import com.rakh1m.solidbankapp.accounts.AccountType;
 import com.rakh1m.solidbankapp.appUI.CLIUI;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
+
 @Getter
 @Component
 
 public class MyCLI implements CLIUI {
-    private Scanner scanner;
+    private final Scanner scanner;
+
     @Autowired
     public MyCLI() {
         this.scanner = new Scanner(System.in);
@@ -40,7 +39,14 @@ public class MyCLI implements CLIUI {
 
     public double requestClientAmount() {
         System.out.println("Please enter amount to transfer: ");
-        return Double.parseDouble(scanner.nextLine());
+        double amount;
+        try {
+            amount = Double.parseDouble(scanner.nextLine());
+            return amount;
+        } catch (NumberFormatException e) {
+            System.out.println("Wrong format!");
+        }
+        return 0.0d;
     }
 
     @Override

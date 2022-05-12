@@ -1,9 +1,8 @@
 package com.rakh1m.solidbankapp.accountServices;
 
-import com.rakh1m.solidbankapp.Account;
+import com.rakh1m.solidbankapp.accounts.Account;
 import com.rakh1m.solidbankapp.accounts.AccountType;
 import com.rakh1m.solidbankapp.accounts.AccountWithdraw;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

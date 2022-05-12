@@ -1,6 +1,6 @@
 package com.rakh1m.solidbankapp.dao;
 
-import com.rakh1m.solidbankapp.Account;
+import com.rakh1m.solidbankapp.accounts.Account;
 import com.rakh1m.solidbankapp.accounts.AccountType;
 import com.rakh1m.solidbankapp.accounts.AccountWithdraw;
 import org.springframework.stereotype.Repository;
@@ -25,8 +25,9 @@ public class MemoryAccountDao implements AccountDAO {
     }
 
     @Override
-    public void updateAccount(Account account) {
+    public void updateAccount(Account account, Double amount) {
 
+        account.setBalance(account.getBalance() + amount);
     }
 
     @Override
@@ -37,9 +38,8 @@ public class MemoryAccountDao implements AccountDAO {
     @Override
     public AccountWithdraw getClientWithdrawAccount(String clientID, String accountID) {
         for (var account : accountList) {
-            if (account instanceof AccountWithdraw
-                    && account.getClientID().equals(clientID)
-                    && account.getId().equals(accountID)) {
+            if (account.getClientID().equals(clientID)
+                    && account.getId().equals(accountID) && account.isWithDrawAllowed()) {
                 return (AccountWithdraw) account;
             }
         }

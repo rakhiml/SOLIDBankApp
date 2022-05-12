@@ -1,7 +1,5 @@
 package com.rakh1m.solidbankapp.accounts;
 
-import com.rakh1m.solidbankapp.Account;
-
 
 public abstract class AccountDeposit extends Account {
 

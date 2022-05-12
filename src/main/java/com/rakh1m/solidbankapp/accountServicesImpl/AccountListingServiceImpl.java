@@ -1,6 +1,6 @@
 package com.rakh1m.solidbankapp.accountServicesImpl;
 
-import com.rakh1m.solidbankapp.Account;
+import com.rakh1m.solidbankapp.accounts.Account;
 import com.rakh1m.solidbankapp.dao.AccountDAO;
 import com.rakh1m.solidbankapp.accounts.AccountType;
 import com.rakh1m.solidbankapp.accounts.AccountWithdraw;
@@ -14,9 +14,6 @@ import java.util.List;
 public class AccountListingServiceImpl implements AccountListingService {
     private AccountDAO accountDAO;
 
-//    public AccountListingServiceImpl(AccountDAO accountDAO) {
-//        this.accountDAO = accountDAO;
-//    }
 
     @Override
     public Account getClientAccount(String clientID, String accountID) {

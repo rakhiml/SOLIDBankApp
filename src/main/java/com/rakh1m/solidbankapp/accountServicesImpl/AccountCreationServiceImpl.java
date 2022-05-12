@@ -1,6 +1,5 @@
 package com.rakh1m.solidbankapp.accountServicesImpl;
 
-import com.rakh1m.solidbankapp.Account;
 import com.rakh1m.solidbankapp.accountServices.AccountCreationService;
 import com.rakh1m.solidbankapp.accounts.*;
 import com.rakh1m.solidbankapp.dao.AccountDAO;
@@ -13,9 +12,6 @@ import org.springframework.stereotype.Component;
 public class AccountCreationServiceImpl implements AccountCreationService {
     private AccountDAO accountDAO;
 
-//    public AccountCreationServiceImpl(AccountDAO accountDAO) {
-//        this.accountDAO = accountDAO;
-//    }
 
     @Override
     public void create(AccountType accountType, long bankID, String clientID, long accountID) {
@@ -27,10 +23,10 @@ public class AccountCreationServiceImpl implements AccountCreationService {
 
                 break;
             case "SAVING":
-                acc = new SavingAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, false);
+                acc = new SavingAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, true);
                 break;
             case "CHECKING":
-                acc = new CheckingAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, false);
+                acc = new CheckingAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, true);
                 break;
             default:
                 return;
