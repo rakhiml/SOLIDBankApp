@@ -1,13 +1,13 @@
-package com.rakh1m.rakh1m.dao;
+package com.rakh1m.solidbankapp.dao;
 
-import com.rakh1m.rakh1m.accounts.Account;
-import com.rakh1m.rakh1m.dao.AccountDAO;
-import com.rakh1m.rakh1m.accounts.AccountType;
-import com.rakh1m.rakh1m.accounts.AccountWithdraw;
+import com.rakh1m.solidbankapp.Account;
+import com.rakh1m.solidbankapp.accounts.AccountType;
+import com.rakh1m.solidbankapp.accounts.AccountWithdraw;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class MemoryAccountDao implements AccountDAO {
     List<Account> accountList = new ArrayList<>();
 
@@ -26,6 +26,7 @@ public class MemoryAccountDao implements AccountDAO {
 
     @Override
     public void updateAccount(Account account) {
+
     }
 
     @Override
@@ -35,11 +36,25 @@ public class MemoryAccountDao implements AccountDAO {
 
     @Override
     public AccountWithdraw getClientWithdrawAccount(String clientID, String accountID) {
+        for (var account : accountList) {
+            if (account instanceof AccountWithdraw
+                    && account.getClientID().equals(clientID)
+                    && account.getId().equals(accountID)) {
+                return (AccountWithdraw) account;
+            }
+        }
         return null;
     }
 
     @Override
     public Account getClientAccount(String clientID, String accountID) {
+        for (var account : accountList) {
+            if (account.getClientID().equals(clientID)
+                    && account.getId().equals(accountID)) {
+                return account;
+            }
+        }
         return null;
     }
+
 }

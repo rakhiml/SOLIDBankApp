@@ -1,9 +1,12 @@
-package com.rakh1m.rakh1m.accounts;
+package com.rakh1m.solidbankapp.accounts;
 
-import com.rakh1m.rakh1m.accounts.AccountDeposit;
-import com.rakh1m.rakh1m.accounts.AccountType;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 
 public class FixedAccount extends AccountDeposit {
+
     public FixedAccount(AccountType accountType, String id, String clientID, double balance, boolean withDrawAllowed) {
         super(accountType, id, clientID, balance, withDrawAllowed);
     }

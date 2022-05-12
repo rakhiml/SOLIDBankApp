@@ -1,15 +1,21 @@
-package com.rakh1m.rakh1m.accountServicesImpl;
+package com.rakh1m.solidbankapp.accountServicesImpl;
 
-import com.rakh1m.rakh1m.accountServices.AccountCreationService;
-import com.rakh1m.rakh1m.accounts.*;
-import com.rakh1m.rakh1m.dao.AccountDAO;
+import com.rakh1m.solidbankapp.Account;
+import com.rakh1m.solidbankapp.accountServices.AccountCreationService;
+import com.rakh1m.solidbankapp.accounts.*;
+import com.rakh1m.solidbankapp.dao.AccountDAO;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
+
+@Component
+@AllArgsConstructor
 
 public class AccountCreationServiceImpl implements AccountCreationService {
     private AccountDAO accountDAO;
 
-    public AccountCreationServiceImpl(AccountDAO accountDAO) {
-        this.accountDAO = accountDAO;
-    }
+//    public AccountCreationServiceImpl(AccountDAO accountDAO) {
+//        this.accountDAO = accountDAO;
+//    }
 
     @Override
     public void create(AccountType accountType, long bankID, String clientID, long accountID) {
@@ -18,6 +24,7 @@ public class AccountCreationServiceImpl implements AccountCreationService {
         switch (accType) {
             case "FIXED":
                 acc = new FixedAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, false);
+
                 break;
             case "SAVING":
                 acc = new SavingAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, false);

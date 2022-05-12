@@ -1,11 +1,12 @@
-package com.rakh1m.rakh1m.dao;
+package com.rakh1m.solidbankapp.dao;
 
-import com.rakh1m.rakh1m.accounts.Account;
-import com.rakh1m.rakh1m.accounts.AccountType;
-import com.rakh1m.rakh1m.accounts.AccountWithdraw;
+import com.rakh1m.solidbankapp.Account;
+import com.rakh1m.solidbankapp.accounts.AccountType;
+import com.rakh1m.solidbankapp.accounts.AccountWithdraw;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface AccountDAO {
     List<Account> getClientAccounts(String clientID);
 

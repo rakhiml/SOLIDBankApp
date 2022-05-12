@@ -1,10 +1,10 @@
-package com.rakh1m.rakh1m;
+package com.rakh1m.solidbankapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Rakh1mApplicationTests {
+class SolidBankAppTests {
 
 	@Test
 	void contextLoads() {
