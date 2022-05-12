@@ -42,7 +42,7 @@ public class SolidBankApp implements CommandLineRunner {
 
                 //Create account request
                 case "2" -> {
-                    System.out.println("Please enter account type \n [CHECKING, SAVING, FIXED]");
+                    System.out.println("Please enter account type \n[CHECKING, SAVING, FIXED]");
                     accountBasicCLI.createAccountRequest(clientID);
                 }
 

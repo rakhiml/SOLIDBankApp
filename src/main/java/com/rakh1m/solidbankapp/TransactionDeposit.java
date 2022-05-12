@@ -12,10 +12,8 @@ public class TransactionDeposit {
     private AccountDepositService accountDepositService;
     private TransactionDAO transactionDAO;
 
-
+    //Execution of transaction
     public void execute(Account account, double amount) {
-        // transactionDAO.addTransaction(new Transaction(account,amount));
         accountDepositService.deposit(amount, account);
-
     }
 }

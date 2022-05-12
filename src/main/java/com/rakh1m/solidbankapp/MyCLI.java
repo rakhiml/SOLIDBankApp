@@ -2,6 +2,7 @@ package com.rakh1m.solidbankapp;
 
 import com.rakh1m.solidbankapp.accounts.AccountType;
 import com.rakh1m.solidbankapp.appUI.CLIUI;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,20 +11,16 @@ import java.util.Scanner;
 
 @Getter
 @Component
-
+@AllArgsConstructor
 public class MyCLI implements CLIUI {
-    private final Scanner scanner;
+    private Scanner scanner;
 
     @Autowired
     public MyCLI() {
         this.scanner = new Scanner(System.in);
     }
 
-    public MyCLI(Scanner scanner) {
-        this.scanner = scanner;
-    }
-
-
+    //Check for eligible account type
     @Override
     public AccountType requestAccountType() {
         try {
@@ -34,9 +31,8 @@ public class MyCLI implements CLIUI {
 
     }
 
-
     @Override
-
+    //get amount from user
     public double requestClientAmount() {
         System.out.println("Please enter amount to transfer: ");
         double amount;
@@ -50,10 +46,9 @@ public class MyCLI implements CLIUI {
     }
 
     @Override
-
+    // get account number from user
     public String requestClientAccountNumber() {
         System.out.println("Please enter account number: ");
         return scanner.nextLine();
-
     }
 }
