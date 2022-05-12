@@ -11,11 +11,7 @@ import org.springframework.stereotype.Component;
 public class TransactionDeposit {
     private AccountDepositService accountDepositService;
     private TransactionDAO transactionDAO;
-//    @Autowired
-//    public void TransactionDeposit(AccountDepositService accountDepositService, TransactionDAO transactionDAO){
-//        this.accountDepositService = accountDepositService;
-//        this.transactionDAO = transactionDAO;
-//    }
+
 
     public void execute(Account account, double amount) {
         // transactionDAO.addTransaction(new Transaction(account,amount));
