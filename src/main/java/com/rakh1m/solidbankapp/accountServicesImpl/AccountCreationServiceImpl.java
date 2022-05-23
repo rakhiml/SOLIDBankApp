@@ -2,16 +2,14 @@ package com.rakh1m.solidbankapp.accountServicesImpl;
 
 import com.rakh1m.solidbankapp.accountServices.AccountCreationService;
 import com.rakh1m.solidbankapp.accounts.*;
-import com.rakh1m.solidbankapp.dao.AccountDAO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-
 public class AccountCreationServiceImpl implements AccountCreationService {
-    private AccountDAO accountDAO;
 
+    private AccountRepository accountRepository;
 
     @Override
     public void create(AccountType accountType, long bankID, String clientID, long accountID) {
@@ -19,20 +17,18 @@ public class AccountCreationServiceImpl implements AccountCreationService {
         Account acc;
         switch (accType) {
             case "FIXED":
-                acc = new FixedAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, false);
-
+                acc = new Account(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, false);
+                accountRepository.insert(acc.getAccountType(), acc.getId(), acc.getClientID(), acc.isWithdrawAllowed());
                 break;
             case "SAVING":
-                acc = new SavingAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, true);
-                break;
             case "CHECKING":
-                acc = new CheckingAccount(accountType, String.format("%03d%06d", 1, accountID), clientID, 0, true);
+                acc = new Account(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, true);
+                accountRepository.insert(acc.getAccountType(), acc.getId(), acc.getClientID(), acc.isWithdrawAllowed());
+
                 break;
             default:
                 return;
         }
-
-        accountDAO.createNewAccount(acc);
-
+        System.out.println("Account has been created");
     }
 }

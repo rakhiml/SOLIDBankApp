@@ -2,10 +2,8 @@ package com.rakh1m.solidbankapp.accounts;
 
 
 public abstract class AccountWithdraw extends Account {
-    public AccountWithdraw(AccountType accountType, String id, String clientID, double balance, boolean withDrawAllowed) {
-        super(accountType, id, clientID, balance, withDrawAllowed);
+    public AccountWithdraw(String accountType, String id, String clientID, double balance, boolean withdrawAllowed) {
+        super(accountType, id, clientID, balance, withdrawAllowed);
     }
-//    public AccountWithdraw(AccountType accountType, String id, String clientID, double balance, boolean withDrawAllowed) {
-//        super(accountType, id, clientID, balance, withDrawAllowed);
-//    }
+
 }

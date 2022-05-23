@@ -14,6 +14,16 @@ public class TransactionDeposit {
 
     //Execution of transaction
     public void execute(Account account, double amount) {
-        accountDepositService.deposit(amount, account);
+
+        try {
+            accountDepositService.deposit(amount, account);
+
+            transactionDAO.save(new Transaction(amount,"Deposit"));
+
+        } catch (IncorrectAmountException e) {
+
+        }
+
+
     }
 }

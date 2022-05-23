@@ -19,9 +19,10 @@ public class SolidBankApp implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
         boolean running = true;
         String clientID = "1";
-
+        //for (Account i : accountDAO.findAll()) System.out.println(i.toString());
         MyCLI myCLI = context.getBean(MyCLI.class);
         AccountBasicCLI accountBasicCLI = context.getBean(AccountBasicCLI.class);
         TransactionDepositCLI transactionDepositCLI = context.getBean(TransactionDepositCLI.class);

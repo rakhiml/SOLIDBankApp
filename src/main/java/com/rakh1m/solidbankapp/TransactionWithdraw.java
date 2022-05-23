@@ -14,6 +14,9 @@ public class TransactionWithdraw {
     private TransactionDAO transactionDAO;
 
     public void execute(Account account, double amount) {
-        accountWithdrawService.withdraw(amount, (AccountWithdraw) account);
+        try { accountWithdrawService.withdraw(amount, account);
+            transactionDAO.save(new Transaction(amount,"Withdraw"));}
+        catch (IncorrectAmountException e) { }
+
     }
 }

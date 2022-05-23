@@ -1,8 +1,18 @@
 package com.rakh1m.solidbankapp;
 
+import lombok.*;
+import org.springframework.data.annotation.Id;
+
+@Data
+//@Builder
+@RequiredArgsConstructor
 public class Transaction {
-    //USELESS class - > further development in progress...
-    //private Account account;
-    private Double amount;
+
+    @Id
+    private int id;
+    private final Double amount;
+    private final String transactionType;
+
+
 
 }

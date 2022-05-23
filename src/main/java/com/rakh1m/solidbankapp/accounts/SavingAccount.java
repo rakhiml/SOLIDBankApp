@@ -6,7 +6,8 @@ import lombok.RequiredArgsConstructor;
 
 public class SavingAccount extends AccountWithdraw {
 
-    public SavingAccount(AccountType accountType, String id, String clientID, double balance, boolean withDrawAllowed) {
-        super(accountType, id, clientID, balance, withDrawAllowed);
+
+    public SavingAccount(String accountType, String id, String clientID, double balance, boolean withdrawAllowed) {
+        super(accountType, id, clientID, balance, withdrawAllowed);
     }
 }

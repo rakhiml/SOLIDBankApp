@@ -2,6 +2,7 @@ package com.rakh1m.solidbankapp;
 
 import com.rakh1m.solidbankapp.accountServices.AccountListingService;
 import com.rakh1m.solidbankapp.accounts.Account;
+import com.rakh1m.solidbankapp.accounts.AccountRepository;
 import com.rakh1m.solidbankapp.accounts.AccountType;
 import com.rakh1m.solidbankapp.appUI.CreateAccountOperationUI;
 import lombok.AllArgsConstructor;
@@ -16,6 +17,7 @@ public class AccountBasicCLI {
     CreateAccountOperationUI createAccountOperationUI;
     BankCore bankCore;
     AccountListingService accountListing;
+    AccountRepository accountRepository;
 
     void createAccountRequest(String clientID) {
         AccountType at = createAccountOperationUI.requestAccountType();
@@ -29,8 +31,8 @@ public class AccountBasicCLI {
     }
 
     void getAccounts(String clientID) {
-        List<Account> clientAccounts = accountListing.getClientAccounts(clientID);
-        System.out.println(clientAccounts);
+        //List<Account> clientAccounts = accountListing.getClientAccounts(clientID);
+        System.out.println(accountRepository.findAll());//clientAccounts);
     }
 
 
