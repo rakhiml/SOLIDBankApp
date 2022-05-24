@@ -17,12 +17,14 @@ public class AccountCreationServiceImpl implements AccountCreationService {
         Account acc;
         switch (accType) {
             case "FIXED":
-                acc = new Account(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, false);
+                acc = new FixedAccount(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, false);
                 accountRepository.insert(acc.getAccountType(), acc.getId(), acc.getClientID(), acc.isWithdrawAllowed());
                 break;
             case "SAVING":
+                acc = new SavingAccount(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, true);
+                accountRepository.insert(acc.getAccountType(), acc.getId(), acc.getClientID(), acc.isWithdrawAllowed());
             case "CHECKING":
-                acc = new Account(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, true);
+                acc = new CheckingAccount(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, true);
                 accountRepository.insert(acc.getAccountType(), acc.getId(), acc.getClientID(), acc.isWithdrawAllowed());
 
                 break;
