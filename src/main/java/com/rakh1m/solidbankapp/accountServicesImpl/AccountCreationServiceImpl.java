@@ -23,10 +23,10 @@ public class AccountCreationServiceImpl implements AccountCreationService {
             case "SAVING":
                 acc = new SavingAccount(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, true);
                 accountRepository.insert(acc.getAccountType(), acc.getId(), acc.getClientID(), acc.isWithdrawAllowed());
+                break;
             case "CHECKING":
                 acc = new CheckingAccount(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, true);
                 accountRepository.insert(acc.getAccountType(), acc.getId(), acc.getClientID(), acc.isWithdrawAllowed());
-
                 break;
             default:
                 return;
