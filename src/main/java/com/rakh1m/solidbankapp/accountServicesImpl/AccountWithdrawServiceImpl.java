@@ -25,6 +25,7 @@ public class AccountWithdrawServiceImpl implements AccountWithdrawService {
             //System.out.println("Not enough funds on account!");
             throw new IncorrectAmountException("Not enough funds on account :( ");
         }
+
         account.setBalance(currentBalance - amount);
         accountRepository.save(account);
         //old method to update acc wihtout db;

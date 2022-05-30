@@ -6,8 +6,9 @@ import com.rakh1m.solidbankapp.accounts.AccountWithdraw;
 import com.rakh1m.solidbankapp.dao.TransactionDAO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @AllArgsConstructor
 public class TransactionWithdraw {
     private AccountWithdrawService accountWithdrawService;
@@ -15,7 +16,7 @@ public class TransactionWithdraw {
 
     public void execute(Account account, double amount) {
         try { accountWithdrawService.withdraw(amount, account);
-            transactionDAO.save(new Transaction(amount,"Withdraw"));}
+            transactionDAO.save(new Transaction(amount,"Withdraw",account.getId()));}
         catch (IncorrectAmountException e) { }
 
     }

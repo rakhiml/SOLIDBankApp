@@ -12,7 +12,7 @@
 //
 //    void createNewAccount(Account account);
 //
-//    void updateAccount(Account account, Double amount);
+//    void Account(Account account, Double amount);
 //
 //    List<Account> getClientAccountsByType(String clientID, AccountType accountType);
 //

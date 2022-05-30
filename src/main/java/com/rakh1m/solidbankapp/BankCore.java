@@ -14,6 +14,10 @@ public class BankCore {
     @NonNull
     private AccountCreationService accountCreation;
 
+    public long getLastAccountNumber() {
+        return lastAccountNumber++;
+    }
+
     //Create new account
     public void createNewAccount(AccountType accountType, String clientID) {
         accountCreation.create(accountType, id, clientID, this.lastAccountNumber);

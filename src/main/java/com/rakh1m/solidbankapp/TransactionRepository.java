@@ -4,9 +4,16 @@ import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 
-public interface TransactionRepository extends CrudRepository<Transaction, String> {
+import java.util.List;
 
-    @Modifying
-    @Query("insert into Transaction VALUES (:id, :accountType, :clientID,0,:withdrawAllowed)")
-    void insert(long ID, Double amount, String transactionType);
+public interface TransactionRepository extends CrudRepository<Transaction, Integer> {
+
+
+    //List<Transaction> getTransactionByaccount_id (String account_id);
+
+    @Override
+    List<Transaction> findAll();
+
+    @Query("SELECT * where account_id = :account_id")
+    List<Transaction> getTransactionByAccount_id(String account_id);
 }
